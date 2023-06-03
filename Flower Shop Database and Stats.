@@ -34,7 +34,7 @@ FROM flower_shop
 GROUP BY color
 limit 5;
 
---which flowers does the store have more of in stock?
+--which flowers have the highest quantity on hand?
 SELECT name, qoh FROM flower_shop
 ORDER BY qoh desc;
 
