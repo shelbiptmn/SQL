@@ -29,7 +29,7 @@ FROM flower_shop
 where color='purple'; 
 
 --what are the 5 most popular colors? 
-SSELECT color, COUNT(*) as num_colors 
+SELECT color, COUNT(*) as num_colors 
 FROM flower_shop 
 GROUP BY color
 limit 5;
