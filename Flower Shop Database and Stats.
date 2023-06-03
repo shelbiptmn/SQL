@@ -1,0 +1,40 @@
+--Create a grocery store database
+
+CREATE TABLE flower_shop (id INTEGER PRIMARY KEY, name TEXT, color TEXT, price INTEGER, aisle INTEGER, qoh INTEGER);
+
+INSERT INTO flower_shop VALUES 
+(1, "Roses", "red", 2, 1, 36),
+(2, "Roses", "pink", 2, 1, 5),
+(3, "Tulips", "pink", 1, 2, 7),
+(4, "Tulips", "yellow", 1, 2, 5), 
+(5, "Daisies", "white", 2, 3, 24),
+(6, "Daisies", "red", 2, 3, 12),
+(7, "Jasmine", "white", 1, 1, 10),
+(8, "Lavendar", "purple", 2, 4, 36),
+(9, "Dahlia", "red", 2, 4, 10),
+(10, "Iris", "purple", 5, 4, 18),
+(11, "Hydrangea", "purple", 2, 3, 10), 
+(12, "Lilly", "white", 5, 5, 10),
+(13, "Daffodil", "yellow", 3, 5, 5),
+(14, "Orchid", "pink", 2, 5, 10),
+(15, "Peony", "pink", 1, 5, 10);
+
+--display the database ordered by color and price. 
+SELECT * FROM flower_shop 
+ORDER BY color, price asc;
+
+--what is the avg price of flowers that are purple? 
+SELECT AVG(price) "avg purple item price"
+FROM flower_shop
+where color='purple'; 
+
+--what are the 5 most popular colors? 
+SSELECT color, COUNT(*) as num_colors 
+FROM flower_shop 
+GROUP BY color
+limit 5;
+
+--which flowers does the store have more of in stock?
+SELECT name, qoh FROM flower_shop
+ORDER BY qoh desc;
+
