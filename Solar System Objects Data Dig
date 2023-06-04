@@ -91,7 +91,7 @@ CASE
     WHEN surface_gravity <=9.77 THEN "lighter_than_earth"
    	WHEN surface_gravity >=9.781 THEN "heavier_than_earth"
     WHEN surface_gravity =9.78033 THEN "on_earth"
-    ELSE "unknown"
+    ELSE "null"
  END as "weight_difference"
  FROM solar_system_objects
  ORDER By weight_difference;
