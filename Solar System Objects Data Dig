@@ -48,6 +48,19 @@ INSERT INTO solar_system_objects VALUES
 
 SELECT * FROM solar_system_objects;
 
+--Can we use HAVING to narrow down a search?
+SELECT body, mass FROM solar_system_objects
+GROUP BY body HAVING mass >10000
+ORDER BY mass;
+
+--Can we find the MAX, MIN, and AVG in a dataset?
+SELECT body, MAX(volume) AS max_volume FROM solar_system_objects;
+
+SELECT body, mass, volume, MIN(density) FROM solar_system_objects
+;
+SELECT AVG(mass) as "Average_mass" FROM solar_system_objects WHERE volume >100000;
+
+
 --Can we find the objects with a mean_radius 5000 or higher whose volume do not exceed 2000?
 
 SELECT body, mean_radius, mass 
